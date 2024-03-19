@@ -84,7 +84,7 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'O2Switch ContactApp',
+        'NAME': 'charlesmussotte_contactApp',
         'USER' : 'charlesmussotte_admin',
         'PASSWORD': '5wghRJ?5q2Y~',
         'HOST': '109.234.162.214',
