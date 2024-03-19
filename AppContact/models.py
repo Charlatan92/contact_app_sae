@@ -10,6 +10,7 @@ class Contact(models.Model):
     telephone = models.BigIntegerField(null=False)
     adresse = models.CharField(max_length=255, blank=True, null=True)
     metier = models.CharField(max_length=50, blank=True, null=True)
+    photo_path = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f"{self.prenom} {self.nom}"
