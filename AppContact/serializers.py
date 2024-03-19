@@ -4,7 +4,7 @@ from AppContact.models import Contact, ContactGroupe, Groupe
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model=Contact
-        fields=('id','prenom','nom','email','telephone','adresse','metier')
+        fields=('id','prenom','nom','email','telephone','adresse','metier','photo_path')
         
         
 class GroupeSerializer(serializers.ModelSerializer):
