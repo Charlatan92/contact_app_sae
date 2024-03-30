@@ -37,6 +37,7 @@ const department = {template: `
                 </button>
             </td>
         </tr>
+    </tbody>
 </table>
 
 `,
