@@ -14,7 +14,7 @@ body {
 
 /* Lignes de démarquation */
 
-hr {
+.home hr {
     height: 1px;
     background: #003768;
     margin: 5%;
@@ -22,7 +22,7 @@ hr {
 
 /* Titre de la page */
 
-.titleContact {
+.home .titleContact {
     margin-top: 30px;
     margin-bottom: 10px;
     text-align: center;
@@ -32,7 +32,7 @@ hr {
 
 /* Barre de recherche */
 
-#barreRecherche {
+.home #barreRecherche {
     display: inline;
     height: 30px;
     width: 260px;
@@ -53,7 +53,7 @@ hr {
 
 /* Ajout d'un contact */
 
-#AddContact {
+.home #AddContact {
     display: inline; 
     margin-left: 5px; 
     width: 30px;
@@ -67,7 +67,7 @@ hr {
 
 /* Paramètres */
 
-#Parametres {
+.home #Parametres {
     display: inline; 
     margin-left: 2px; 
     width: 30px;
@@ -79,7 +79,7 @@ hr {
     border: none;    
 }
 
-.Champ {
+.home .Champ {
     margin-left: 15px;
     padding: 2px;
     padding-left: 35px;
@@ -93,25 +93,54 @@ hr {
     text-align: left;
 }
 
-#MonProfil {
+.home #MonProfil {
     background-size: 20px;
     margin-bottom: 0;
 }
 
-#Favoris {
+.home #Favoris {
     margin-bottom: 10px;
     background-image: url(Images/StarFill.svg);
     background-size: 18px;
 }
 
-#Groupes {
+.home #Groupes {
     background-image: url(Images/Groups.svg);
     background-size: 18px;
     margin-bottom: 0;
 }
 
-#Doublons {
+.home #Doublons {
     background-image: url(Images/Doublons.svg);
     background-size: 20px;
     margin-bottom: 0;
+}
+
+.home li {
+    list-style-type: none;
+    color: #003768;
+}
+
+.home .listeContact {
+    margin-left: 15px;
+    padding: 2px;
+    padding-left: 35px;
+    width: 315px;
+    border: red 0.01px solid;
+    border-radius: 15px;
+}
+
+.home #test p {
+    margin-top: -27px;
+    margin-left: 50px;
+}
+
+.home #test img {
+    position: relative;
+    left: -87.5%;
+    top: -3px;
+}
+
+.home #test input {
+    z-index: 900;
 }

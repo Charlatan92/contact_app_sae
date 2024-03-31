@@ -1,0 +1,23 @@
+.contact {
+    background-color: #C3C3C3;
+    color: #003768;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact .Champ {
+    margin-left: 15px;
+    padding: 2px;
+    padding-left: 35px;
+    width: 315px;
+    border: #003768 0.01px solid;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-color: #C3C3C3;
+    background-position: 7px;
+    color: #003768;
+    text-align: left;
+}
