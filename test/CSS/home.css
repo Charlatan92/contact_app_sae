@@ -95,6 +95,7 @@ hr {
 
 #MonProfil {
     background-size: 20px;
+    margin-bottom: 0;
 }
 
 #Favoris {
@@ -106,9 +107,11 @@ hr {
 #Groupes {
     background-image: url(Images/Groups.svg);
     background-size: 18px;
+    margin-bottom: 0;
 }
 
 #Doublons {
     background-image: url(Images/Doublons.svg);
     background-size: 20px;
+    margin-bottom: 0;
 }

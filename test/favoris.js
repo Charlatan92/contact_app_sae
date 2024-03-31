@@ -1,0 +1,1 @@
+const favoris= {template: '<h1>This is favoris page</h1>'} 

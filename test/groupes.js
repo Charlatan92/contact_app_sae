@@ -1,0 +1,1 @@
+const groupes= {template: '<h1>This is group page</h1>'} 
