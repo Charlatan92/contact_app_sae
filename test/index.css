@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #C3C3C3;
+}
+
+/* Lignes de démarquation */
+
+hr {
+    height: 1px;
+    background: #003768;
+    margin: 5%;
+}
+
+/* Titre de la page */
+
+.titleContact {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+    color: #003768;
+}
+
+/* Barre de recherche */
+
+#barreRecherche {
+    display: inline;
+    height: 30px;
+    width: 260px;
+    margin-top: 20px;
+    margin-left: 15px;
+    padding-left: 10%;
+    border: none;
+    border-radius: 15px;
+    background-image: url(Images/Loupe.svg);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-color: #efefef;
+    color: #003768;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Ajout d'un contact */
+
+#AddContact {
+    display: inline; 
+    margin-left: 5px; 
+    width: 30px;
+    background-color: #C3C3C3;
+    background-image: url(Images/Plus.svg);
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    border: none;    
+}
+
+/* Paramètres */
+
+#Parametres {
+    display: inline; 
+    margin-left: 2px; 
+    width: 30px;
+    background-color: #C3C3C3;
+    background-image: url(Images/ThreeDotsVertical.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    border: none;    
+}
+
+.Champ {
+    margin-left: 15px;
+    padding: 2px;
+    padding-left: 35px;
+    width: 315px;
+    border: #003768 0.01px solid;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-color: #C3C3C3;
+    background-position: 7px;
+    color: #003768;
+    text-align: left;
+}
+
+#MonProfil {
+    background-size: 20px;
+}
+
+#Favoris {
+    margin-bottom: 10px;
+    background-image: url(Images/StarFill.svg);
+    background-size: 18px;
+}
+
+#Groupes {
+    background-image: url(Images/Groups.svg);
+    background-size: 18px;
+}
+
+#Doublons {
+    background-image: url(Images/Doublons.svg);
+    background-size: 20px;
+}
