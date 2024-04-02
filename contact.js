@@ -28,7 +28,7 @@ const contact = {
         const contactId = this.$route.params.id;
 
         // Charge les données du fichier JSON
-        fetch('contacts.json')
+        fetch('data/contacts.json')
             .then(response => response.json())
             .then(data => {
                 // Trouve le contact correspondant à l'ID
