@@ -13,4 +13,6 @@ urlpatterns = [
     # Ces URLs semblent incorrectes car elles sont en double avec 'groupe', elles devraient être 'contactgroupe' peut-être ?
     re_path(r'^contactgroupe$', views.contactGroupeApi),
     re_path(r'^contactgroupe/([0-9]+)$', views.contactGroupeApi),
+    
+    re_path(r'^contact/savefile',views.SaveFile)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
