@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nom": "Les Visionnaires",
+        "photo": "CSS/Images/StarFill.svg"
+    },
+    {
+        "id": 2,
+        "nom": "Les Pionniers",
+        "photo": "CSS/Images/StarFill.svg"
+    },
+    {
+        "id": 3,
+        "nom": "Les Explorateurs",
+        "photo": "CSS/Images/StarFill.svg"
+    },
+    {
+        "id": 4,
+        "nom": "Les Innovateurs",
+        "photo": "CSS/Images/StarFill.svg"
+    },
+    {
+        "id": 5,
+        "nom": "Les Trailblazers",
+        "photo": "CSS/Images/StarFill.svg"
+    }
+]

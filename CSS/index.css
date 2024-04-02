@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #C3C3C3;
+}
+
+/* Lignes de démarquation */
+
+hr {
+    height: 1px;
+    background: #003768;
+    margin: 5%;
+}

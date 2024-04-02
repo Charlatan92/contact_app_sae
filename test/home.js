@@ -22,7 +22,7 @@
             <hr> <!-- Ligne de séparation -->
         </header>
 
-        <li v-for="contact in filteredContacts" :key="contact.id" id="test" @click="goToProfile(contact.id)">
+        <li v-for="contact in filteredContacts" :key="contact.id" id="listeContact" @click="goToProfile(contact.id)">
             <input type="button" class="Champ">
             <img :src="contact.photo" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
@@ -52,7 +52,7 @@
     },
     mounted() {
         // Charge les données du fichier JSON
-        fetch('file.json')
+        fetch('data/contacts.json')
             .then(response => response.json())
             .then(data => {
                 this.contacts = data;
