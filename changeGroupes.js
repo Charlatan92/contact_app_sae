@@ -1,7 +1,7 @@
-const favoris = {
+const changeGroupes = {
     template: `
-    <div class="favoris">
-        <h1 class="titleFavoris">Favoris</h1>
+    <div class="changeGroupes">
+        <h1 class="titleFavoris">Groupes</h1>
         <li v-for="contact in favoriteContacts" id="listeFavoris" :key="contact.id" @click="goToProfile(contact.id)">
             <input type="button" class="Champ">
             <img :src="contact.photo" alt="Profile" class="profile-img">
@@ -9,7 +9,7 @@ const favoris = {
         </li>
         <button id="But1"><a href="#/home">Retour</a></button>
     
-        <button id="But2"><a href="#/changeFavoris">Modifier</a></button>
+        <button id="But2"><a href="#/changeContact">Modifier</a></button>
     </div>
     `,
     data() {
@@ -23,6 +23,13 @@ const favoris = {
         favoriteContacts() {
             // Filtrer les contacts pour afficher uniquement les favoris
             return this.contacts.filter(contact => this.favorites.includes(contact.id));
+        },
+        filteredContacts() {
+            // Filtrer les contacts en fonction de la recherche
+            return this.contacts.filter(contact => {
+                return contact.nom.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                       contact.prenom.toLowerCase().includes(this.searchQuery.toLowerCase());
+            });
         }
     },
     methods: {
