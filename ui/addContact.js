@@ -32,37 +32,24 @@ const addContact = {
             this.$router.push({ path: '#/home' });
         },
         enregistrer() {
-            // Crée un nouvel objet contact
             const newContact = {
-                id: Date.now(),  // ID unique basé sur la date et l'heure
                 nom: this.nom,
                 prenom: this.prenom,
                 telephone: this.telephone,
                 email: this.email,
                 adresse: this.adresse,
                 metier: this.metier,
-                // photo: 'path/to/photo.jpg'  // Mettre à jour le chemin de la photo si nécessaire
             };
         
-            // Envoie l'objet au serveur pour l'ajouter au fichier JSON
-            fetch('contacts.json', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newContact)
-            })
-            .then(response => response.text())  // Convertit la réponse en texte
-            .then(text => {
-                // Affiche la réponse du serveur (pour le débogage)
-                console.log(text);
-        
-                // Redirige vers la page d'accueil
-                this.$router.push({ path: '#/home' });
-            })
-            .catch(error => {
-                console.error('Erreur lors de l\'enregistrement du contact:', error);
-            });
+            axios.post('/contact', newContact)
+                .then(response => {
+                    console.log('Contact enregistré:', response.data);
+                    this.$router.push('/home');
+                })
+                .catch(error => {
+                    console.error('Erreur lors de l\'enregistrement du contact:', error);
+                });
         }
+        
     }
 }

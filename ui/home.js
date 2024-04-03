@@ -31,14 +31,14 @@
     `,
     data() {
         return {
-            contacts: [],  // Initialise le tableau des contacts
+            contact: [],  // Initialise le tableau des contact
             searchQuery: ''  // Initialise la requête de recherche
         };
     },
     computed: {
         filteredContacts() {
-            // Filtrer les contacts en fonction de la recherche
-            return this.contacts.filter(contact => {
+            // Filtrer les contact en fonction de la recherche
+            return this.contact.filter(contact => {
                 return contact.nom.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
                        contact.prenom.toLowerCase().includes(this.searchQuery.toLowerCase());
             });
@@ -51,14 +51,13 @@
         }
     },
     mounted() {
-        // Charge les données du fichier JSON
-        fetch('data/contacts.json')
-            .then(response => response.json())
-            .then(data => {
-                this.contacts = data;
+        axios.get('/contact')
+            .then(response => {
+                this.contact = response.data;
             })
             .catch(error => {
                 console.error('Erreur lors du chargement des données:', error);
             });
     }
+    
 }

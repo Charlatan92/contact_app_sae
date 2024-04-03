@@ -27,15 +27,16 @@ const contact = {
         // Récupère l'ID du contact depuis l'URL
         const contactId = this.$route.params.id;
 
-        // Charge les données du fichier JSON
-        fetch('data/contacts.json')
-            .then(response => response.json())
-            .then(data => {
-                // Trouve le contact correspondant à l'ID
-                this.contact = data.find(c => c.id === parseInt(contactId));
+        // Charge les données de l'API Django
+        axios.get(`/contact/${contactId}`) // Utilisez le chemin correct de votre API
+            .then(response => {
+                // Affecte les données de contact reçues à la propriété contact
+                this.contact = response.data;
             })
             .catch(error => {
                 console.error('Erreur lors du chargement des données:', error);
             });
     }
 }
+
+export default contact;
