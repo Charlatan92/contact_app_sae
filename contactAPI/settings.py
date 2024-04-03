@@ -90,9 +90,14 @@ DATABASES = {
         'USER' : 'charlesmussotte_admin',
         'PASSWORD': '5wghRJ?5q2Y~',
         'HOST': '109.234.162.214',
-        'PORT': '3306'
+        'PORT': '3306',
+        'TEST': {
+            'NAME': 'charlesmussotte_test_contactApp',
+        },
     }
 }
+
+TEST_RUNNER = 'AppContact.test_runner.NoDbTestRunner'
 
 
 # Password validation
