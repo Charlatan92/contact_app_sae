@@ -6,7 +6,6 @@ const contact = {
         <input class="Champ" id="Nom" v-model="contact.nom">
         <input class="Champ" id="Prenom" v-model="contact.prenom">
         <input class="Champ" id="Email" v-model="contact.email">
-        <!-- Ajouter un '0' au début du numéro de téléphone lors de l'affichage pour l'édition -->
         <input class="Champ" id="NumTelephone" v-model="formattedTelephone">
         <input class="Champ" id="Adresse" v-model="contact.adresse">
         <input class="Champ" id="Metier" v-model="contact.metier">

@@ -67,6 +67,19 @@
     margin-right: 15px;
 }
 
+.groupeItem {
+    display: flex;
+    align-items: center;
+}
+
+.couleurGroupe {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
 @media screen and (max-width: 900px) {}
 
 @media screen and (min-width: 550px) {}

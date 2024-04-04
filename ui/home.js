@@ -18,8 +18,8 @@ const home = {
             <a href="#/favoris">
                 <input type="button" value="Favoris" class="Champ" id="Favoris">
             </a>
-            <a href="#/groupes">
-                <input type="button" value="Groupes" class="Champ" id="Groupes">
+            <a href="#/groupesPage">
+                <input type="button" value="Groupes" class="Champ" id="GroupesPage">
             </a>
             <hr>
             <a href="#/doublons">
@@ -31,7 +31,7 @@ const home = {
         <li v-for="contact in filteredContacts" :key="contact.id" id="listeContact" @click="goToProfile(contact.id)">
             <input type="button" class="inputContact">
             <!-- Modifier la source de l'image pour utiliser une image par défaut si aucune photo n'est définie -->
-            <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
+            <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img-list">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
         </li>
     </div>
