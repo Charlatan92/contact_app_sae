@@ -55,7 +55,7 @@ const addContact = {
                 photo_path: this.photo_path // à modifier si nécessaire pour inclure la logique de chemin de photo
             };
 
-            axios.post('http://127.0.0.1:8000/contact', newContact)
+            axios.post('http://127.0.0.1:8000/contact/', newContact)
                 .then(response => {
                     console.log('Contact enregistré:', response.data);
                     this.$router.push('/home');
