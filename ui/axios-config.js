@@ -1,9 +1,9 @@
+// axios-config.js
 import axios from 'axios';
 
-// Configurez Axios avec l'URL de base de votre API et d'autres paramètres
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8000/', // Votre URL de base API
-  // Vous pouvez ajouter d'autres paramètres par défaut ici
+const instance = axios.create({
+  baseURL: 'http://127.0.0.1:8000/', // Assurez-vous que c'est la bonne URL de base
+  // autres configurations si nécessaire
 });
 
-export default axiosInstance;
+export default instance;

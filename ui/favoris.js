@@ -60,3 +60,4 @@ const favoris = {
             });
     }
 }
+export default favoris;

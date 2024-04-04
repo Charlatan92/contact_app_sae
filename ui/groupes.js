@@ -41,3 +41,5 @@ const groupes = {
         }
     }
 }
+
+export default groupes;

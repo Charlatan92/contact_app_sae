@@ -53,3 +53,4 @@ const addContact = {
         
     }
 }
+export default addContact;

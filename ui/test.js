@@ -93,3 +93,5 @@ const test = {
       .finally(() => this.loading = false)
   }
 }
+
+export default test;

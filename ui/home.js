@@ -1,4 +1,4 @@
-    const home = {
+const home = {
     template: `
     <div class="home">
         <header>
@@ -31,14 +31,14 @@
     `,
     data() {
         return {
-            contact: [],  // Initialise le tableau des contact
+            contacts: [],  // Initialise le tableau des contact
             searchQuery: ''  // Initialise la requête de recherche
         };
     },
     computed: {
         filteredContacts() {
-            // Filtrer les contact en fonction de la recherche
-            return this.contact.filter(contact => {
+            // Filtrer les contacts en fonction de la recherche
+            return this.contacts.filter(contact => {
                 return contact.nom.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
                        contact.prenom.toLowerCase().includes(this.searchQuery.toLowerCase());
             });
@@ -53,11 +53,13 @@
     mounted() {
         axios.get('/contact')
             .then(response => {
-                this.contact = response.data;
+                this.contacts = response.data; // Correction ici: utilisez `contacts` pour correspondre à votre data
             })
             .catch(error => {
                 console.error('Erreur lors du chargement des données:', error);
-            });
+            });    
     }
     
 }
+
+export default home;
