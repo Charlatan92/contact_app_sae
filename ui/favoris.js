@@ -1,48 +1,75 @@
-export default {
+const favoris = {
     template: `
     <div class="favoris">
         <h1 class="titleFavoris">Favoris</h1>
-        <li v-for="contact in favoriteContacts" :key="contact.id" class="itemFavoris">
-            <div class="contactInfo">
-                <img :src="contact.photo" alt="Profile" class="profile-img">
-                <p>{{ contact.nom }} {{ contact.prenom }}</p>
-            </div>
-        </li>
+        <div>
+            <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites">
+            <label for="toggleFavorites">Afficher seulement les favoris</label>
+        </div>
+        <ul>
+            <li v-for="contact in displayedContacts" :key="contact.id" class="itemFavoris">
+                <input type="checkbox" v-model="selectedContacts" :value="contact.id">
+                <div @click="goToProfile(contact.id)" class="contactInfo">
+                    <img :src="contact.photo || 'CSS/Images/defaultImage.png'" alt="Profile" class="profile-img">
+                    <p>{{ contact.nom }} {{ contact.prenom }}</p>
+                </div>
+            </li>
+        </ul>
         <button id="But1"><a href="#/home">Retour</a></button>
+        <button @click="saveFavorites">Enregistrer</button>
     </div>
     `,
     data() {
         return {
             contacts: [],
-            groupes: [],
             contactGroupes: [],
-            idGroupeFavori: 1, // ID de votre groupe favori, à ajuster selon votre logique
+            selectedContacts: [],
+            showOnlyFavorites: false,
         };
     },
     computed: {
-        favoriteContacts() {
-            // Filtre les contacts basés sur leur présence dans le groupe favori
-            const favoriContactIds = this.contactGroupes
-                .filter(cg => cg.groupeId === this.idGroupeFavori)
-                .map(cg => cg.contactId);
+        displayedContacts() {
+            if (this.showOnlyFavorites) {
+                const favoriContactIds = this.contactGroupes
+                    .filter(cg => cg.groupe_id === 1)
+                    .map(cg => cg.contact_id);
 
-            return this.contacts.filter(contact => favoriContactIds.includes(contact.id));
+                return this.contacts.filter(contact => favoriContactIds.includes(contact.id));
+            } else {
+                return this.contacts;
+            }
         },
     },
-    mounted() {
-        // Charge tous les contacts
-        axios.get('/contact')
-            .then(response => {
-                this.contacts = response.data;
-            });
-
-        // Charge toutes les liaisons contact-groupe
-        axios.get('/contactgroupe')
-            .then(response => {
-                this.contactGroupes = response.data;
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement des données:', error);
-            });
+    methods: {
+        goToProfile(contactId) {
+            this.$router.push(`/contact/${contactId}`);
+        },
+        saveFavorites() {
+            // La logique d'enregistrement des favoris
+            console.log('Saving favorites:', this.selectedContacts);
+        },
+        loadContacts() {
+            axios.get('http://127.0.0.1:8000/contact')
+                .then(response => {
+                    this.contacts = response.data;
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement des contacts:', error);
+                });
+        },
+        loadContactGroupes() {
+            axios.get('http://127.0.0.1:8000/contactgroupe')
+                .then(response => {
+                    this.contactGroupes = response.data;
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement des groupes de contacts:', error);
+                });
+        }
     },
-};
+    mounted() {
+        this.loadContacts();
+        this.loadContactGroupes();
+    }
+}
+export default favoris;
