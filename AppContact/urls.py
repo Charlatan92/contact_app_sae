@@ -4,15 +4,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    re_path(r'^contact$', views.contactApi),
-    re_path(r'^contact/([0-9]+)$', views.contactApi),
+    # Capture les requêtes GET pour tous les contacts et pour un contact spécifique par son ID
+    re_path(r'^contact/$', views.contactApi),  # Pour obtenir tous les contacts
+    re_path(r'^contact/(?P<id>[0-9]+)$', views.contactApi),  # Pour obtenir un contact spécifique par ID
 
-    re_path(r'^groupe$', views.groupeApi),
-    re_path(r'^groupe/([0-9]+)$', views.groupeApi),
+    re_path(r'^groupe/$', views.groupeApi),  # Pour obtenir tous les groupes
+    re_path(r'^groupe/(?P<id>[0-9]+)$', views.groupeApi),  # Pour obtenir un groupe spécifique par ID
     
-    # Ces URLs semblent incorrectes car elles sont en double avec 'groupe', elles devraient être 'contactgroupe' peut-être ?
-    re_path(r'^contactgroupe$', views.contactGroupeApi),
-    re_path(r'^contactgroupe/([0-9]+)$', views.contactGroupeApi),
-    
-    re_path(r'^contact/savefile',views.SaveFile)
+    # URLs pour ContactGroupe
+    re_path(r'^contactgroupe/$', views.contactGroupeApi),  # Pour obtenir tous les ContactGroupe
+    re_path(r'^contactgroupe/(?P<id>[0-9]+)$', views.contactGroupeApi),  # Pour obtenir un ContactGroupe spécifique par ID
+
+    # Sauvegarder un fichier
+    re_path(r'^contact/savefile$', views.SaveFile),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

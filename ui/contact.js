@@ -6,7 +6,7 @@ const contact = {
         <p class="Champ" id="Nom">Nom: {{ contact.nom }}</p>
         <p class="Champ" id="Prenom">Prénom: {{ contact.prenom }}</p>
         <p class="Champ" id="Email">Email: {{ contact.email }}</p>
-        <p class="Champ" id="NumTelephone">Téléphone: {{ contact.telephone }}</p>
+        <p class="Champ" id="NumTelephone">Téléphone: {{ '0' + contact.telephone }}</p>
         <p class="Champ" id="Adresse">Adresse: {{ contact.adresse }}</p>
         <p class="Champ" id="Metier">Métier: {{ contact.metier }}</p>
 

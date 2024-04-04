@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
@@ -14,10 +14,17 @@ from django.core.files.storage import default_storage
 
 @csrf_exempt
 def contactApi(request, id=0):
+    # Si un ID est fourni dans l'URL, renvoyez seulement le contact correspondant à cet ID.
     if request.method == 'GET':
-        contacts = Contact.objects.all()
-        contacts_serializer = ContactSerializer(contacts, many=True)
-        return JsonResponse(contacts_serializer.data, safe=False)
+        if id:
+            contact = get_object_or_404(Contact, pk=id)
+            contact_serializer = ContactSerializer(contact)
+            return JsonResponse(contact_serializer.data, safe=False)
+        else:
+            contacts = Contact.objects.all()
+            contacts_serializer = ContactSerializer(contacts, many=True)
+            return JsonResponse(contacts_serializer.data, safe=False)
+
     
     elif request.method == 'POST':
         contact_data = JSONParser().parse(request)
