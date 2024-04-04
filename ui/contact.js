@@ -1,36 +1,35 @@
-// Définit le composant de la page de détails
 const contact = {
     template: `
-    <div class="contact">
-        <img :src="contact.photo" alt="Profile" class="photoProfil">
+    <div class="contact" v-if="contact">
+        <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="photoProfil"> 
 
-        <p class="Champ" id="Nom"> {{ contact.nom }}</p>
-        <p class="Champ" id="Prenom"> {{ contact.prenom }}</p>
-        <p class="Champ" id="Email"> {{ contact.email }}</p>
-        <p class="Champ" id="NumTelephone"> {{ contact.telephone }}</p>
-        <p class="Champ" id="Adresse"> {{ contact.adresse }}</p>
-        <p class="Champ" id="Metier"> {{ contact.metier }}</p>
+        <p class="Champ" id="Nom">Nom: {{ contact.nom }}</p>
+        <p class="Champ" id="Prenom">Prénom: {{ contact.prenom }}</p>
+        <p class="Champ" id="Email">Email: {{ contact.email }}</p>
+        <p class="Champ" id="NumTelephone">Téléphone: {{ contact.telephone }}</p>
+        <p class="Champ" id="Adresse">Adresse: {{ contact.adresse }}</p>
+        <p class="Champ" id="Metier">Métier: {{ contact.metier }}</p>
 
         <button id="But1"><a href="#/home">Retour</a></button>
     
-        <button id="But2"><a href="#/changeContact">Modifier</a></button>
+        <!-- Supposons que vous ayez un composant ou une page pour changer les détails d'un contact -->
+        <button id="But2" v-if="contact.id"><a :href="'#/changeContact/' + contact.id">Modifier</a></button>
     
-        <button id="But3"><a href="#/home">Enregistrer</a></button>
     </div>
     `,
     data() {
         return {
-            contact: {}  // Initialise l'objet contact
+            contact: null // initialiser contact en tant que null
         };
     },
     mounted() {
-        // Récupère l'ID du contact depuis l'URL
+        // Utilisez this.$route.params.id pour obtenir l'ID du contact à partir de l'URL
         const contactId = this.$route.params.id;
 
-        // Charge les données de l'API Django
-        axios.get(`/contact/${contactId}`) // Utilisez le chemin correct de votre API
+        // Faites la demande GET à votre API pour récupérer les informations du contact
+        axios.get(`http://127.0.0.1:8000/contact/${contactId}`) // Utilisez l'URL de votre API
             .then(response => {
-                // Affecte les données de contact reçues à la propriété contact
+                // Assurez-vous que l'API renvoie un objet contact dans la réponse
                 this.contact = response.data;
             })
             .catch(error => {

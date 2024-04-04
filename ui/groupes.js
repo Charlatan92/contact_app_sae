@@ -2,43 +2,37 @@ const groupes = {
     template: `
     <div class="groupes">
         <h1 class="titleGroupes">Groupes</h1>
-        <li v-for="groupe in groupesList" id="listeGroupes" :key="groupe.id" @click="goToProfile(groupe.id)">
-            <input type="button" class="Champ">
-            <img :src="groupe.photo" alt="Profile" class="profile-img">
-            <p>{{ groupe.nom }}</p>
+        <li v-for="groupe in groupesList" :key="groupe.id" class="itemGroupes" @click="goToProfile(groupe.id)">
+            <div class="groupInfo">
+                <img :src="groupe.photo" alt="Image du groupe" class="profile-img">
+                <p>{{ groupe.nom }}</p>
+            </div>
         </li>
         <button id="But1"><a href="#/home">Retour</a></button>
-    
-        <button id="But2"><a href="#/changeContact">Modifier</a></button>
+        <button id="But2"><a href="#/addGroupe">Ajouter Groupe</a></button> <!-- Ajustez le lien si nécessaire -->
     </div>
     `,
     data() {
         return {
-            groupe: {},  // Initialise l'objet groupe
             groupesList: []  // Initialise le tableau des groupes
         };
-    },
-    mounted() {
-        // Récupère l'ID du groupe depuis l'URL
-        const groupeId = this.$route.params.id;
-
-        // Charge les données du fichier JSON des groupes
-        fetch('data/groupes.json')
-            .then(response => response.json())
-            .then(data => {
-                // Trouve le groupe correspondant à l'ID
-                this.groupe = data.find(g => g.id === parseInt(groupeId));
-                this.groupesList = data;
-            })
-            .catch(error => {
-                console.error('Erreur lors du chargement des données:', error);
-            });
     },
     methods: {
         goToProfile(groupeId) {
             // Redirige vers la page de détails du groupe
             this.$router.push({ path: `/groupe/${groupeId}` });
         }
+    },
+    mounted() {
+        // Charge les données de l'API Django
+        axios.get('/groupe') // Assurez-vous que c'est la bonne URL de base
+            .then(response => {
+                // Affecte la liste des groupes reçue à la propriété groupesList
+                this.groupesList = response.data;
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement des données:', error);
+            });
     }
 }
 
