@@ -28,14 +28,14 @@
 }
 
 .favoris #listeFavoris p {
-    margin-top: -27px;
+    margin-top: -52px;
     margin-left: 50px;
 }
 
 .favoris #listeFavoris img {
     position: relative;
     left: -87.5%;
-    top: -3px;
+    top: -30px;
 }
 
 .favoris #listeFavoris input {
@@ -48,7 +48,7 @@
     border: #003768 1px solid;
     border-radius: 15px;
     padding: 7.5px 15px 7.5px 15px;
-    margin-top: 65px;
+    margin-top: 35px;
 }
 
 .favoris button a {
@@ -63,5 +63,6 @@
 
 .favoris #But1 {
     margin-left: 75px;
+    margin-bottom: 30px;
     margin-right: 15px;
 }

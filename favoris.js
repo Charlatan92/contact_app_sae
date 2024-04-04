@@ -2,45 +2,44 @@ const favoris = {
     template: `
     <div class="favoris">
         <h1 class="titleFavoris">Favoris</h1>
-        <li v-for="contact in favoriteContacts" id="listeFavoris" :key="contact.id">
+        <li v-for="contact in contacts" id="listeFavoris" :key="contact.id">
             <input type="button" class="Champ">
-            <input v-if="isEditMode" type="checkbox" v-model="selectedContacts" :value="contact.id" class="Champ">
+            <input type="checkbox" v-model="selectedContacts" :value="contact.id" class="Champ" :checked="favorites.includes(contact.id)" style="position: relative; right: -35%; top: -30px">
             <img :src="contact.photo" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
         </li>
-        <button v-if="!isEditMode" id="But1"><a href="#/home">Retour</a></button>
-        <button v-else id="ButCancel" @click="cancelEdit">Annuler</button>
-        <button v-if="!isEditMode" id="But2" @click="startEdit">Modifier</button>
-        <button v-else id="ButDelete" @click="deleteSelected">Supprimer</button>
+        <button id="But1"><a href="#/home">Retour</a></button>
+        <button @click="saveFavorites"><a href="#/home">Enregistrer</a></button>
     </div>
     `,
     data() {
         return {
             contacts: [],  // Initialise le tableau des contacts
             favorites: [], // Initialise le tableau des favoris
-            searchQuery: '',  // Initialise la requête de recherche
-            isEditMode: false,
             selectedContacts: []
         };
     },
     computed: {
-        favoriteContacts() {
-            // Filtrer les contacts pour afficher uniquement les favoris
-            return this.contacts.filter(contact => this.favorites.includes(contact.id));
-        }
     },
     methods: {
-        startEdit() {
-            this.isEditMode = true;
-        },
-        cancelEdit() {
-            this.isEditMode = false;
-            this.selectedContacts = [];
-        },
-        deleteSelected() {
-            this.favorites = this.favorites.filter(id => !this.selectedContacts.includes(id));
-            this.selectedContacts = [];
-            this.isEditMode = false;
+        saveFavorites() {
+            this.favorites = [...this.selectedContacts];
+            
+            // Enregistre les favoris mis à jour dans favoris.json
+            fetch('data/favoris.json', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.favorites),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Favorites saved:', data);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la sauvegarde des favoris:', error);
+            });
         }
     },
     mounted() {
@@ -59,10 +58,10 @@ const favoris = {
             .then(response => response.json())
             .then(data => {
                 this.favorites = data;
+                this.selectedContacts = [...this.favorites]; // Initialise selectedContacts avec les favoris
             })
             .catch(error => {
                 console.error('Erreur lors du chargement des données:', error);
-            }
-        );
+            });
     }
 }
