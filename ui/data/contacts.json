@@ -398,5 +398,25 @@
     "adresse": "40 Avenue Marceau, Paris",
     "metier": "Médecin",
     "photo": "CSS/Images/StarFill.svg"
+  },
+  {
+    "id": 41,
+    "prenom": "Juliette",
+    "nom": "Robin",
+    "email": "juliette.robin@gmail.com",
+    "telephone": 904567890,
+    "adresse": "40 Avenue Marceau, Paris",
+    "metier": "Médecin",
+    "photo": "CSS/Images/StarFill.svg"
+  },
+  {
+    "id": 42,
+    "prenom": "Benjamin",
+    "nom": "Lecompte",
+    "email": "benjamin.lecompte@yahoo.com",
+    "telephone": 803456789,
+    "adresse": "39 Rue du Faubourg Saint-Honoré, Paris",
+    "metier": "Journaliste",
+    "photo": "CSS/Images/StarFill.svg"
   }
 ]

@@ -42,13 +42,18 @@
     z-index: 900;
 }
 
+.doublons #butDelete {
+    margin-left: 35%;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
 .doublons button {
     color: #003768;
     background-color: #C3C3C3;
     border: #003768 1px solid;
     border-radius: 15px;
     padding: 7.5px 15px 7.5px 15px;
-    margin-top: 65px;
 }
 
 .doublons button a {
@@ -64,4 +69,15 @@
 .doublons #But1 {
     margin-left: 75px;
     margin-right: 15px;
+    margin-bottom: 5%;
 }
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (min-width: 550px) {}
+
+@media screen and (min-width : 768px) {}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width : 1025px) {}

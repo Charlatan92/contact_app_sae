@@ -8,11 +8,15 @@ const doublons = {
             <p class="Champ">{{ duplicate.nom }} {{ duplicate.prenom }}</p>
 
             <ul>
+                <li><strong>ID:</strong> {{ duplicate.id }}</li>
                 <li><strong>Email:</strong> {{ duplicate.email }}</li>
                 <li><strong>Téléphone:</strong> {{ duplicate.telephone }}</li>
                 <li><strong>Adresse:</strong> {{ duplicate.adresse }}</li>
                 <li><strong>Métier:</strong> {{ duplicate.metier }}</li>
             </ul>
+
+            <!-- Bouton Supprimer -->
+            <button @click="deleteDuplicate(duplicate.id)" id="butDelete">Supprimer</button>
         </div>
 
         <button id="But1"><a href="#/home">Retour</a></button>
@@ -42,20 +46,24 @@ const doublons = {
     methods: {
         findDuplicates() {
             const duplicates = [];
-            const uniqueEmails = new Set();
-            const uniquePhones = new Set();
-
+            const namesCount = {};
+    
             this.contacts.forEach(contact => {
-                if (uniqueEmails.has(contact.email) || uniquePhones.has(contact.telephone)) {
+                const fullName = `${contact.nom} ${contact.prenom}`;
+    
+                if (namesCount[fullName]) {
                     duplicates.push(contact);
+                    namesCount[fullName]++;
                 } else {
-                    uniqueEmails.add(contact.email);
-                    uniquePhones.add(contact.telephone);
+                    namesCount[fullName] = 1;
                 }
             });
-
+    
             this.duplicates = duplicates;
+        },
+        deleteDuplicate(id) {
+            this.duplicates = this.duplicates.filter(duplicate => duplicate.id !== id);
         }
-    }
+    }    
 };
 export default doublons;

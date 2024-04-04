@@ -5,6 +5,7 @@
 
 .contact .Champ {
     margin-left: 15px;
+    margin-top: 15px;
     padding: 2px;
     padding-left: 35px;
     width: 315px;
@@ -84,3 +85,13 @@
 .contact #But2 {
     margin-right: 10px;
 }
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (min-width: 550px) {}
+
+@media screen and (min-width : 768px) {}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width : 1025px) {}

@@ -22,7 +22,6 @@ hr {
 
 .addContact #PhotoProfilClair {
     margin-top: 20%;
-    margin-left: 40%;
     margin-bottom: 20%;
     width: 20%;
 }
@@ -65,7 +64,7 @@ hr {
     margin-bottom: 15px;
     padding: 2px;
     padding-left: 35px;
-    width: 315px;
+    width: 80%;
     border: #003768 0.01px solid;
     border-radius: 15px;
     background-repeat: no-repeat;
@@ -98,3 +97,13 @@ hr {
     margin-left: 60px;
     margin-right: 15px;
 }
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (min-width: 550px) {}
+
+@media screen and (min-width : 768px) {}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width : 1025px) {}
