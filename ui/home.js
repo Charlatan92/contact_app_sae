@@ -30,16 +30,17 @@ const home = {
 
         <li v-for="contact in filteredContacts" :key="contact.id" id="listeContact" @click="goToProfile(contact.id)">
             <input type="button" class="inputContact">
-            <img :src="contact.photo" alt="Profile" class="profile-img">
+            <!-- Modifier la source de l'image pour utiliser une image par défaut si aucune photo n'est définie -->
+            <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
         </li>
     </div>
     `,
     data() {
         return {
-            contacts: [],
-            searchQuery: '',
-            showSortOptions: false
+            contacts: [],  // Initialise le tableau des contacts
+            searchQuery: '',  // Initialise la requête de recherche
+            showSortOptions: false // Ajouter cette propriété pour gérer l'affichage des options de tri
         };
     },
     computed: {

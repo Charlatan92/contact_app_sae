@@ -10,7 +10,7 @@ const favoris = {
             <li v-for="contact in displayedContacts" :key="contact.id" class="itemFavoris">
                 <input type="checkbox" v-model="selectedContacts" :value="contact.id">
                 <div @click="goToProfile(contact.id)" class="contactInfo">
-                    <img :src="contact.photo || 'CSS/Images/defaultImage.png'" alt="Profile" class="profile-img">
+                    <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
                     <p>{{ contact.nom }} {{ contact.prenom }}</p>
                 </div>
             </li>
