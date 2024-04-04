@@ -4,8 +4,10 @@ const routes=[
     {path:'/addContact',component:addContact},
 
     {path:'/favoris',component:favoris},
+    {path:'/changeFavoris',component:changeFavoris},
 
     {path:'/groupes',component:groupes},
+    {path:'/groupe/:id',component:groupeDetails},
     {path:'/changeGroupes',component:changeGroupes},
 
     {path:'/doublons',component:doublons},

@@ -1,9 +1,8 @@
-const favoris = {
+const changeFavoris = {
     template: `
     <div class="favoris">
         <h1 class="titleFavoris">Favoris</h1>
-        <li v-for="contact in favoriteContacts" id="listeFavoris" :key="contact.id">
-            <input type="button" class="Champ">
+        <li v-for="contact in favoriteContacts" id="listeFavoris" :key="contact.id" @click="goToProfile(contact.id)">
             <input v-if="isEditMode" type="checkbox" v-model="selectedContacts" :value="contact.id" class="Champ">
             <img :src="contact.photo" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
@@ -30,6 +29,10 @@ const favoris = {
         }
     },
     methods: {
+        goToProfile(contactId) {
+            // Redirige vers la page de détails du contact
+            this.$router.push({ path: `/contact/${contactId}` });
+        },
         startEdit() {
             this.isEditMode = true;
         },

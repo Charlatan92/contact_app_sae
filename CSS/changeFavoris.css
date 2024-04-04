@@ -1,6 +1,6 @@
 /* Titre de la page */
 
-.doublons .titleDoublons {
+.changeFavoris .titleFavoris {
     margin-top: 30px;
     margin-bottom: 50px;
     text-align: center;
@@ -8,7 +8,7 @@
     color: #003768;
 }
 
-.doublons .Champ {
+.changeFavoris .Champ {
     margin-left: 15px;
     padding: 2px;
     padding-left: 35px;
@@ -22,52 +22,46 @@
     text-align: left;
 }
 
-.doublons li {
+.changeFavoris li {
     list-style-type: none;
     color: #003768;
 }
 
-.doublons p {
+.changeFavoris #listeFavoris p {
     margin-top: -27px;
     margin-left: 50px;
 }
 
-.doublons #test img {
+.changeFavoris #listeFavoris img {
     position: relative;
-    left: 7.5%;
+    left: -87.5%;
     top: -3px;
 }
 
-.doublons input {
+.changeFavoris #listeFavoris input {
     z-index: 900;
 }
 
-.doublons #butDelete {
-    margin-left: 35%;
-    margin-top: 5%;
-    margin-bottom: 15%;
-}
-
-.doublons button {
+.changeFavoris button {
     color: #003768;
     background-color: #C3C3C3;
     border: #003768 1px solid;
     border-radius: 15px;
     padding: 7.5px 15px 7.5px 15px;
+    margin-top: 65px;
 }
 
-.doublons button a {
+.changeFavoris button a {
     text-decoration: none;
     color: #003768;
 }
 
-.doublons button a:hover {
+.changeFavoris button a:hover {
     text-decoration: none;
     color: #003768;
 }
 
-.doublons #But1 {
+.changeFavoris #But1 {
     margin-left: 75px;
     margin-right: 15px;
-    margin-bottom: 5%;
 }

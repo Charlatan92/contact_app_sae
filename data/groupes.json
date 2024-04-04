@@ -2,26 +2,36 @@
     {
         "id": 1,
         "nom": "Les Visionnaires",
-        "photo": "CSS/Images/StarFill.svg"
+        "photo": "CSS/Images/StarFill.svg",
+        "contacts": [1, 2, 3],
+        "membres": [1, 2]
     },
     {
         "id": 2,
         "nom": "Les Pionniers",
-        "photo": "CSS/Images/StarFill.svg"
+        "photo": "CSS/Images/StarFill.svg",
+        "contacts": [4, 5],
+        "membres": [3, 4]
     },
     {
         "id": 3,
         "nom": "Les Explorateurs",
-        "photo": "CSS/Images/StarFill.svg"
+        "photo": "CSS/Images/StarFill.svg",
+        "contacts": [6, 7],
+        "membres": [5, 6]
     },
     {
         "id": 4,
         "nom": "Les Innovateurs",
-        "photo": "CSS/Images/StarFill.svg"
+        "photo": "CSS/Images/StarFill.svg",
+        "contacts": [8, 9],
+        "membres": [7, 8]
     },
     {
         "id": 5,
         "nom": "Les Trailblazers",
-        "photo": "CSS/Images/StarFill.svg"
+        "photo": "CSS/Images/StarFill.svg",
+        "contacts": [10, 11],
+        "membres": [9, 10]
     }
 ]

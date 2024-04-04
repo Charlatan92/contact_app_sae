@@ -2,8 +2,11 @@ const addContact = {
     template: `
     <div>
         <header class="addContact">
-            <img src="CSS/Images/PhotoProfilClair.svg" alt="Photo de profil claire" id="PhotoProfilClair">
-            
+            <label for="photoInput" style="cursor: pointer; display: block; text-align: center;">
+                <img :src="photo ? photo : 'CSS/Images/PhotoProfilClair.svg'" alt="Photo de profil" id="PhotoProfilClair">
+            </label>
+            <input type="file" id="photoInput" @change="handlePhotoChange" style="display: none;">
+                        
             <input type="text" placeholder="Nom" v-model="nom" class="Champ">
             <input type="text" placeholder="Prénom" v-model="prenom" class="Champ">
             <input type="text" placeholder="Numéro de téléphone" v-model="telephone" class="Champ">
@@ -23,28 +26,38 @@ const addContact = {
             telephone: '',
             email: '',
             adresse: '',
-            metier: ''
+            metier: '',
+            photo: null  // Ajout d'une propriété pour stocker la photo
         };
     },
     methods: {
         annuler() {
-            // Redirige vers la page d'accueil
             this.$router.push({ path: '#/home' });
         },
+        handlePhotoChange(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+    
+            reader.onloadend = () => {
+                this.photo = reader.result;  // Stocke l'image encodée en base64
+            };
+    
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        },
         enregistrer() {
-            // Crée un nouvel objet contact
             const newContact = {
-                id: Date.now(),  // ID unique basé sur la date et l'heure
+                id: Date.now(),
                 nom: this.nom,
                 prenom: this.prenom,
                 telephone: this.telephone,
                 email: this.email,
                 adresse: this.adresse,
                 metier: this.metier,
-                // photo: 'path/to/photo.jpg'  // Mettre à jour le chemin de la photo si nécessaire
+                photo: this.photo  // Utilise la photo stockée
             };
         
-            // Envoie l'objet au serveur pour l'ajouter au fichier JSON
             fetch('contacts.json', {
                 method: 'POST',
                 headers: {
@@ -52,17 +65,14 @@ const addContact = {
                 },
                 body: JSON.stringify(newContact)
             })
-            .then(response => response.text())  // Convertit la réponse en texte
+            .then(response => response.text())
             .then(text => {
-                // Affiche la réponse du serveur (pour le débogage)
                 console.log(text);
-        
-                // Redirige vers la page d'accueil
                 this.$router.push({ path: '#/home' });
             })
             .catch(error => {
                 console.error('Erreur lors de l\'enregistrement du contact:', error);
             });
         }
-    }
+    }    
 }

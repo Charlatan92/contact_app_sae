@@ -10,6 +10,7 @@
 
 .groupes .Champ {
     margin-left: 15px;
+    margin-top: 15px;
     padding: 2px;
     padding-left: 35px;
     width: 315px;
@@ -62,6 +63,6 @@
 }
 
 .groupes #But1 {
-    margin-left: 75px;
+    margin-left: 35%;
     margin-right: 15px;
 }
