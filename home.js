@@ -4,8 +4,8 @@ const home = {
         <header>
             <h1 class="titleContact">Contacts</h1>
 
-                <input type="text" placeholder="Rechercher" v-model="searchQuery" id="barreRecherche">
-                <span v-if="searchQuery" class="clear-icon" @click="clearSearchQuery">&times;</span>
+            <input type="text" placeholder="Rechercher" v-model="searchQuery" id="barreRecherche">
+            <span v-if="searchQuery" class="clear-icon" @click="clearSearchQuery">&times;</span>
 
             <input type="button" value="" id="AddContact" @click="goToAddContact">
             <input type="button" value="" id="Parametres" @click="toggleSortOptions">
@@ -29,7 +29,7 @@ const home = {
         </header>
 
         <li v-for="contact in filteredContacts" :key="contact.id" id="listeContact" @click="goToProfile(contact.id)">
-            <input type="button" class="Champ">
+            <input type="button" class="inputContact">
             <img :src="contact.photo" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
         </li>

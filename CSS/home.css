@@ -1,6 +1,10 @@
+.home {
+    width: 100%;
+}
+
 /* Titre de la page */
 .home .titleContact {
-    margin-top: 30px;
+    margin-top: 7.5%;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 500;
@@ -11,10 +15,10 @@
 .home #barreRecherche {
     display: inline;
     height: 30px;
-    width: 260px;
-    margin-top: 20px;
-    margin-left: 15px;
+    width: 72%;
+    margin-top: 5%;
     padding-left: 10%;
+    margin-left: 4%;
     border: none;
     border-radius: 15px;
     background-image: url(Images/Loupe.svg);
@@ -22,14 +26,14 @@
     background-position: 10px;
     background-color: #efefef;
     color: #003768;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
 }
 
 /* Ajout d'un contact */
 .home #AddContact {
     display: inline; 
-    margin-left: 5px; 
+    margin-left: 1%; 
     width: 30px;
     background-color: #C3C3C3;
     background-image: url(Images/Plus.svg);
@@ -42,8 +46,8 @@
 /* Paramètres */
 .home #Parametres {
     display: inline; 
-    margin-left: 2px; 
-    width: 30px;
+    margin-left: 1%; 
+    width: 10%;
     background-color: #C3C3C3;
     background-image: url(Images/ThreeDotsVertical.svg);
     background-size: 20px;
@@ -58,9 +62,10 @@
     margin: 10px;
     width: 95%;
     padding: 10px;
-    border: none;
-    border-radius: 15px;
+    border-radius: 25px;
     background-color: #C3C3C3;
+    border: none;
+    /* border: 1px solid #003768; */
     color: #003768;
     font-size: 13px;
     font-weight: 500;
@@ -77,7 +82,7 @@
     margin-left: 15px;
     padding: 2px;
     padding-left: 35px;
-    width: 315px;
+    width: 89%;
     border: #003768 0.01px solid;
     border-radius: 15px;
     background-repeat: no-repeat;
@@ -95,7 +100,6 @@
     cursor: pointer;
     color: #003768;
 }
-
 
 .home #Favoris {
     margin-bottom: 10px;
@@ -127,10 +131,77 @@
 
 .home #listeContact img {
     position: relative;
-    left: -87.5%;
+    right: 87%;
     top: -3px;
 }
 
 .home #listeContact input {
+    margin-left: 15px;
+    padding: 2px;
+    padding-left: 35px;
+    width: 89%;
+    border: #003768 0.01px solid;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-color: #C3C3C3;
+    background-position: 7px;
+    color: #003768;
+    text-align: left;
+
     z-index: 900;
 }
+
+@media screen and (min-width: 450px) {
+
+    /* Barre de recherche */
+    .home #barreRecherche {
+        width: 74.5%;
+    }
+
+    /* Boutons Favoris, Groupes, Doublons */
+    .home .Champ {
+        width: 91%;
+    }
+
+    .home #listeContact img {
+        right: 89%;
+    }
+
+    .home #listeContact input {
+        width: 91%;
+    }
+}
+
+@media screen and (min-width: 550px) {
+
+    /* Barre de recherche */
+    .home #barreRecherche {
+        width: 76.5%;
+    }
+
+    /* Boutons Favoris, Groupes, Doublons */
+    .home .Champ {
+        width: 91%;
+    }
+
+    .home #listeContact img {
+        right: 89%;
+    }
+
+    .home #listeContact input {
+        width: 91%;
+    }
+}
+
+@media screen and (min-width : 600px) {
+
+    /* Barre de recherche */
+    .home #barreRecherche {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width : 1025px) {}
