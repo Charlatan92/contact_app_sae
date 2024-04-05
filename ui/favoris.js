@@ -3,8 +3,8 @@ const favoris = {
     <div class="favoris">
         <h1 class="titleFavoris">Favoris</h1>
         <li v-for="contact in contacts" id="listeFavoris" :key="contact.id">
-            <input type="button" class="Champ">
-            <input type="checkbox" v-model="selectedContacts" :value="contact.id" class="Champ" :checked="favorites.includes(contact.id)" style="position: relative; right: -35%; top: -30px">
+            <input type="button" class="Champ" id="barreContact">
+            <input type="checkbox" v-model="selectedContacts" :value="contact.id" class="Champ coche" :checked="favorites.includes(contact.id)" style="position: relative; right: -35%; top: -30px">
             <img :src="contact.photo" alt="Profile" class="profile-img">
             <p>{{ contact.nom }} {{ contact.prenom }}</p>
         </li>

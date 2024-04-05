@@ -1,25 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #C3C3C3;
-}
-
-/* Lignes de démarquation */
-
-hr {
-    height: 1px;
-    background: #003768;
-    margin: 5%;
-}
-
 .addContact #PhotoProfilClair {
     margin-top: 20%;
     margin-bottom: 20%;
@@ -60,7 +38,7 @@ hr {
 }
 
 .addContact .Champ {
-    margin-left: 15px;
+    margin-left: 10%;
     margin-bottom: 15px;
     padding: 2px;
     padding-left: 35px;
@@ -80,7 +58,7 @@ hr {
     border: #003768 1px solid;
     border-radius: 15px;
     padding: 7.5px 15px 7.5px 15px;
-    margin-top: 65px;
+    margin-top: 15%;
 }
 
 .addContact button a {
@@ -94,16 +72,112 @@ hr {
 }
 
 .addContact #But1 {
-    margin-left: 60px;
-    margin-right: 15px;
+    margin-left: 17%;
+    margin-right: 10%;
 }
 
-@media screen and (max-width: 900px) {}
+@media screen and (min-width: 450px) {
 
-@media screen and (min-width: 550px) {}
+    .addContact #PhotoProfilClair {
+        margin-top: 17.5%;
+        margin-bottom: 17.5%;
+        width: 20%;
+    }
 
-@media screen and (min-width : 768px) {}
+    .addContact button {
+        margin-top: 10%;
+    }
+}
 
-@media screen and (min-width: 900px) {}
+@media screen and (min-width: 550px) {
 
-@media screen and (min-width : 1025px) {}
+    .addContact #PhotoProfilClair {
+        margin-top: 15%;
+        margin-bottom: 15%;
+        width: 17.5%;
+    }
+
+    .addContact button {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+    .addContact #PhotoProfilClair {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 15%;
+    }
+
+    .addContact button {
+        margin-top: 7.5%;
+    }
+
+    .addContact #But1 {
+        margin-left: 30%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .addContact #PhotoProfilClair {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 15%;
+    }
+
+    .addContact button {
+        margin-top: 7.5%;
+    }
+}
+
+@media screen and (min-width : 1000px) {
+
+    .addContact #PhotoProfilClair {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 10%;
+    }
+
+    .addContact button {
+        margin-top: 5%;
+    }
+
+    .addContact #But1 {
+        margin-left: 35%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (min-width : 1200px) {
+
+    .addContact #PhotoProfilClair {
+        margin-top: 7.5%;
+        margin-bottom: 7.5%;
+        width: 10%;
+    }
+
+    .addContact button {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (min-width : 1400px) {
+
+    .addContact #PhotoProfilClair {
+        margin-top: 7.5%;
+        margin-bottom: 5%;
+        width: 8.5%;
+    }
+
+    .addContact button {
+        margin-top: 2.5%;
+    }
+
+    .addContact #But1 {
+        margin-left: 37.5%;
+        margin-right: 10%;
+    }
+}
