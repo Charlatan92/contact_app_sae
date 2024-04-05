@@ -46,7 +46,7 @@ const home = {
         filteredContacts() {
             return this.contacts.filter(contact => {
                 return contact.nom.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                       contact.prenom.toLowerCase().includes(this.searchQuery.toLowerCase());
+                    contact.prenom.toLowerCase().includes(this.searchQuery.toLowerCase());
             });
         }
     },
@@ -66,7 +66,7 @@ const home = {
             } else if (order === 'Z-A') {
                 this.contacts.sort((a, b) => b.nom.localeCompare(a.nom));
             }
-            this.showSortOptions = false; 
+            this.showSortOptions = false;
         },
         clearSearchQuery() {
             this.searchQuery = '';
