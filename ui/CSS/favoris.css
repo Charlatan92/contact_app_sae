@@ -26,30 +26,32 @@
     margin-bottom: 25px;
 }
 
-.favoris .itemFavoris {
+.favoris #listeFavoris {
     position: relative;
     list-style-type: none;
-    color: #003768;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    color: #003768;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: #003768 0.01px solid;
+    border-radius: 15px;
+    height: 30px;
 }
 
-.favoris .itemFavoris p {
-    margin-top: -15.5%;
-    margin-left: 60px;
+.favoris #listeFavoris p {
+    margin-top: -6%;
+    margin-left: 11%;
 }
 
-.favoris .itemFavoris img {
+.favoris #listeFavoris img {
     position: absolute;
-    left: 6%;
+    left: 3%;
     margin-top: 2px;
     width: 5%;
 }
 
-.favoris .itemFavoris input {
+.favoris #listeFavoris input {
     position: relative;
-    right: -80%;
-    top: -32px;
+    right: -90%;
 }
 
 .favoris button {

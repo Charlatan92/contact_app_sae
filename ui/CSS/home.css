@@ -122,9 +122,11 @@
 .home li {
     list-style-type: none;
     color: #003768;
+    height: 40px;
 }
 
 .home #listeContact p {
+    position: relative;
     margin-top: -27px;
     margin-left: 50px;
 }
@@ -133,7 +135,7 @@
     position: relative;
     right: 87%;
     top: -3px;
-    width: 5%;
+    width: 4.5%;
 }
 
 .home #listeContact input {
@@ -166,7 +168,8 @@
     }
 
     .home #listeContact img {
-        right: 89%;
+        left: -90%;
+        width: 3.5%;
     }
 
     .home #listeContact input {
@@ -187,7 +190,13 @@
     }
 
     .home #listeContact img {
-        right: 89%;
+        top: -4px;
+        left: -90%;
+        width: 4%;
+    }
+
+    .home #listeContact p {
+        top: 0;
     }
 
     .home #listeContact input {
@@ -220,11 +229,23 @@
     }
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 768px) {
 
     /* Barre de recherche */
     .home #barreRecherche {
         padding-left: 5%;
+    }
+
+    .home #listeContact img {
+        width: 3%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .home #listeContact img {
+        width: 2%;
+        left: -90.5%;
     }
 }
 
@@ -239,6 +260,7 @@
 
     .home #listeContact img {
         right: 90.4%;
+        width: 1.5%;
     }
 
     .home #listeContact input {
