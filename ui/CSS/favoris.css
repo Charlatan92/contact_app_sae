@@ -22,28 +22,34 @@
     text-align: left;
 }
 
-.favoris li {
+.favoris #affFavoris {
+    margin-bottom: 25px;
+}
+
+.favoris .itemFavoris {
+    position: relative;
     list-style-type: none;
     color: #003768;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.favoris #listeFavoris {
-    position: relative;
+.favoris .itemFavoris p {
+    margin-top: -15.5%;
+    margin-left: 60px;
 }
 
-.favoris #listeFavoris p {
-    margin-top: -52px;
-    margin-left: 50px;
-}
-
-.favoris #listeFavoris img {
+.favoris .itemFavoris img {
     position: absolute;
-    left: 7.5%;
-    top: 6px;
+    left: 6%;
+    margin-top: 2px;
+    width: 5%;
 }
 
-.favoris #listeFavoris input {
-    z-index: 900;
+.favoris .itemFavoris input {
+    position: relative;
+    right: -80%;
+    top: -32px;
 }
 
 .favoris button {

@@ -4,17 +4,15 @@ const favoris = {
         <h1 class="titleFavoris">Favoris</h1>
         <div>
             <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites">
-            <label for="toggleFavorites">Afficher seulement les favoris</label>
+            <label id="affFavoris" for="toggleFavorites">Afficher seulement les favoris</label>
         </div>
-        <ul>
-            <li v-for="contact in displayedContacts" :key="contact.id" class="itemFavoris">
-                <input type="checkbox" v-model="selectedContacts" :value="contact.id" :checked="isFavori(contact.id)">
-                <div @click="goToProfile(contact.id)" class="contactInfo">
-                    <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
-                    <p>{{ contact.nom }} {{ contact.prenom }}</p>
-                </div>
-            </li>
-        </ul>
+        <li v-for="contact in displayedContacts" :key="contact.id" class="itemFavoris">
+            <input type="checkbox" v-model="selectedContacts" :value="contact.id" :checked="isFavori(contact.id)">
+            <div @click="goToProfile(contact.id)" class="contactInfo">
+                <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
+                <p>{{ contact.nom }} {{ contact.prenom }}</p>
+            </div>
+        </li>
         <button id="But1"><a href="#/home">Retour</a></button>
         <button @click="saveFavorites">Enregistrer</button>
     </div>
