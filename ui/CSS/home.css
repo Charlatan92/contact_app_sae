@@ -5,7 +5,7 @@
 /* Titre de la page */
 .home .titleContact {
     margin-top: 7.5%;
-    margin-bottom: 10px;
+    margin-bottom: 10%;
     text-align: center;
     font-weight: 500;
     color: #003768;
@@ -32,6 +32,8 @@
 
 /* Ajout d'un contact */
 .home #AddContact {
+    position: relative;
+    top: 5px;
     display: inline; 
     margin-left: 1%; 
     width: 30px;
@@ -45,6 +47,8 @@
 
 /* Paramètres */
 .home #Parametres {
+    position: relative;
+    top: 5px;
     display: inline; 
     margin-left: 1%; 
     width: 10%;
