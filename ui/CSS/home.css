@@ -194,15 +194,53 @@
     }
 }
 
-@media screen and (min-width : 600px) {
+@media screen and (min-width : 576px) {
 
     /* Barre de recherche */
     .home #barreRecherche {
-        width: 80%;
-        margin-left: 0;
+        width: 76.5%;
+        margin-left: 3%;
     }
 }
 
-@media screen and (min-width: 900px) {}
+@media screen and (min-width: 700px) {
 
-@media screen and (min-width : 1025px) {}
+    /* Barre de recherche */
+    .home #barreRecherche {
+        padding-left: 7%;
+    }
+
+    .home #listeContact img {
+        right: 90%;
+    }
+
+    .home #listeContact input {
+        width: 91%;
+    }
+}
+
+@media screen and (min-width: 850px) {
+
+    /* Barre de recherche */
+    .home #barreRecherche {
+        padding-left: 5%;
+    }
+}
+
+@media screen and (min-width : 1200px) {
+
+    /* Barre de recherche */
+    .home #barreRecherche {
+        width: 82.7%;
+        margin-left: 1.8%;
+        padding-left: 4%;
+    }
+
+    .home #listeContact img {
+        right: 90.4%;
+    }
+
+    .home #listeContact input {
+        width: 91%;
+    }
+}

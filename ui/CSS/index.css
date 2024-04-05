@@ -15,7 +15,43 @@ body {
 /* Lignes de démarquation */
 
 hr {
+    width: 90%;
     height: 1px;
     background: #003768;
     margin: 5%;
+}
+
+@media screen and (min-width: 450px) {
+
+    hr {
+        height: 1px;
+        background: #003768;
+        margin: 5%;
+    }
+}
+
+@media screen and (min-width: 550px) {
+}
+
+@media screen and (min-width : 576px) {
+}
+
+@media screen and (min-width: 700px) {
+
+    hr {
+        height: 1px;
+        background: #003768;
+        margin: 4%;
+    }
+}
+
+@media screen and (min-width : 1200px) {
+
+    hr {
+        width: 91%;
+        height: 1px;
+        background: #003768;
+        margin: 3%;
+        margin-left: 1.5%;
+    }
 }
