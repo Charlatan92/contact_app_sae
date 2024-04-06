@@ -5,7 +5,7 @@
 /* Titre de la page */
 .home .titleContact {
     margin-top: 7.5%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     text-align: center;
     font-weight: 500;
     color: #003768;
@@ -196,7 +196,7 @@
     .home #listeContact img {
         top: -4px;
         left: -90%;
-        width: 4%;
+        width: 3.5%;
     }
 
     .home #listeContact p {
@@ -241,7 +241,7 @@
     }
 
     .home #listeContact img {
-        width: 3%;
+        width: 2.5%;
     }
 }
 

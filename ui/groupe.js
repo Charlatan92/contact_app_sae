@@ -2,25 +2,28 @@ const groupe = {
     template: `
     <div class="groupe" v-if="groupe">
         <h2>{{ groupe.nom }}</h2>
-        <div style="display: flex; align-items: center;">
-            <span>Nom du groupe:</span>
-            <input class="Champ" id="Nom" v-model="groupe.nom" style="margin-left: 10px;">
-        </div>
-        <div style="display: flex; align-items: center; margin-top: 10px;">
-            <span>Couleur du groupe:</span>
-            <input type="color" id="Couleur" v-model="groupe.couleur" style="margin-left: 10px;">
+        <div id="paramGroupe">
+            <div>
+                <span>Modifier le nom :</span>
+                <input class="Champ" id="Nom" v-model="groupe.nom">
+            </div>
+            <div>
+                <span id="span2">Couleur du groupe :</span>
+                <input type="color"class="Champ" id="Couleur" v-model="groupe.couleur">
+            </div>
         </div>
 
         <h3>Contacts du groupe</h3>
-        <ul>
+        <div id="membresGroupe">
             <li v-for="contact in contactsDuGroupe" :key="contact.id" class="contact-item" @click="goToContactProfile(contact.id)">
                 <p>{{ contact.nom }} {{ contact.prenom }}</p>
             </li>
-        </ul>
-
-        <button id="But1" @click="goBack">Retour</button>
-        <button id="But2" @click="confirmDelete">Supprimer</button>
-        <button id="But3" @click="saveGroupe">Enregistrer</button>
+            <div class="buttons">
+                <button id="But1" @click="goBack">Retour</button>
+                <button id="But2" @click="confirmDelete">Supprimer</button>
+                <button id="But3" @click="saveGroupe">Enregistrer</button>
+            </div>
+        </div>
     </div>
     `,
     data() {

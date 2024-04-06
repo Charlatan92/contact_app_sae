@@ -1,0 +1,92 @@
+/* Titre de la page */
+
+.groupe h2, h3 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 500;
+    color: #003768;
+}
+
+.groupe #paramGroupe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #003768;
+    margin-left: 10%;
+}
+
+.groupe #paramGroupe > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.groupe #paramGroupe .Champ {
+    margin-left: 10px;
+    padding: 4px;
+    padding-left: 15px;
+    width: 40%;
+    border: none;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-color: #C3C3C3;
+    background-position: 7px;
+    color: #003768;
+    text-align: left;
+}
+
+.groupe #span2 {
+    width: 100%;
+    margin-right: -10px;
+    margin-left: -65%;
+}
+
+.groupe #membresGroupe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.groupe .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.groupe li {
+    list-style-type: none;
+    color: #003768;
+}
+
+.groupe button {
+    color: #003768;
+    background-color: #C3C3C3;
+    border: #003768 1px solid;
+    border-radius: 15px;
+    padding: 7.5px 15px 7.5px 15px;
+    margin-top: 65px;
+}
+
+.groupe #But1 {
+    margin-right: 15px;
+}
+
+.groupe .bouton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (min-width: 550px) {}
+
+@media screen and (min-width : 768px) {}
+
+@media screen and (min-width: 900px) {}
+
+@media screen and (min-width : 1025px) {}

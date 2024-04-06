@@ -1,19 +1,25 @@
 /* Titre de la page */
 
-.groupes .titleGroupes {
+.addGroupe h1 {
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     text-align: center;
     font-weight: 500;
     color: #003768;
 }
 
-.groupes .Champ {
-    margin-left: 15px;
+.addGroupe .groupeItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addGroupe .Champ {
+    margin-left: 10%;
     margin-top: 15px;
     padding: 2px;
     padding-left: 35px;
-    width: 315px;
+    width: 80%;
     border: #003768 0.01px solid;
     border-radius: 15px;
     background-repeat: no-repeat;
@@ -23,27 +29,27 @@
     text-align: left;
 }
 
-.groupes li {
+.addGroupe li {
     list-style-type: none;
     color: #003768;
 }
 
-.groupes #listeGroupes p {
+.addGroupe #listeGroupes p {
     margin-top: -27px;
     margin-left: 50px;
 }
 
-.groupes #listeGroupes img {
+.addGroupe #listeGroupes img {
     position: relative;
     left: -87.5%;
     top: -3px;
 }
 
-.groupes #listeGroupes input {
+.addGroupe #listeGroupes input {
     z-index: 900;
 }
 
-.groupes button {
+.addGroupe button {
     color: #003768;
     background-color: #C3C3C3;
     border: #003768 1px solid;
@@ -52,24 +58,24 @@
     margin-top: 65px;
 }
 
-.groupes button a {
+.addGroupe button a {
     text-decoration: none;
     color: #003768;
 }
 
-.groupes button a:hover {
+.addGroupe button a:hover {
     text-decoration: none;
     color: #003768;
 }
 
-.groupes #But1 {
-    margin-left: 35%;
+.addGroupe #But1 {
     margin-right: 15px;
 }
 
-.groupeItem {
+.addGroupe .bouton {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .couleurGroupe {
@@ -78,14 +84,3 @@
     border-radius: 50%;
     margin-right: 10px;
 }
-
-
-@media screen and (max-width: 900px) {}
-
-@media screen and (min-width: 550px) {}
-
-@media screen and (min-width : 768px) {}
-
-@media screen and (min-width: 900px) {}
-
-@media screen and (min-width : 1025px) {}

@@ -134,14 +134,11 @@ def contactGroupeApi(request, id=0):
         return JsonResponse("Failed to Update", status=status.HTTP_400_BAD_REQUEST, safe=False)
     
     elif request.method == 'DELETE':
-        if id:  
-            try:
-                contact_groupe = ContactGroupe.objects.get(pk=id)
-                contact_groupe.delete()
-                return JsonResponse("Deleted Successfully", status=status.HTTP_204_NO_CONTENT, safe=False)
-            except ContactGroupe.DoesNotExist:
-                return JsonResponse("Failed to Delete - ContactGroupe Not Found", status=status.HTTP_404_NOT_FOUND, safe=False)
-        return JsonResponse("Failed to Delete", status=status.HTTP_400_BAD_REQUEST, safe=False)
+        groupe = get_object_or_404(Groupe, id=id)
+        groupe.delete()
+        return JsonResponse({'message': 'Groupe was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
+    else:
+        return JsonResponse({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
     
     
     

@@ -2,9 +2,11 @@ const favoris = {
     template: `
     <div class="favoris">
         <h1 class="titleFavoris">Favoris</h1>
-        <div>
-            <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites">
-            <label id="affFavoris" for="toggleFavorites">Afficher seulement les favoris</label>
+        <div id="onlyfav">
+            <label id="affFavoris" for="toggleFavorites">
+                {{ showOnlyFavorites ? 'Afficher tous les contacts' : 'Afficher seulement les favoris' }}
+                <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites" style="display:none">
+            </label>
         </div>
         <div>
         <li v-for="contact in displayedContacts" :key="contact.id" id="listeFavoris">

@@ -3,20 +3,17 @@ const groupesPage = {
     <div class="groupes">
         <h1 class="titleGroupes">Groupes</h1>
 
-        <ul>
-            <li v-for="groupe in groupesList" :key="groupe.id" @click="goToProfile(groupe.id)" class="groupeItem">
-                <!-- Afficher un cercle avec la couleur du groupe -->
-                <div class="couleurGroupe" :style="{ backgroundColor: groupe.couleur }"></div>
-                <input type="button" class="Champ" v-model="groupe.nom">
-            </li>
-        </ul>
+        <li v-for="groupe in groupesList" :key="groupe.id" @click="goToProfile(groupe.id)" class="groupeItem">
+            <!-- Afficher un cercle avec la couleur du groupe -->
+            <div class="couleurGroupe" :style="{ backgroundColor: groupe.couleur }"></div>
+            <input type="button" class="Champ" v-model="groupe.nom">
+        </li>
 
-        <!-- Lien pour créer un nouveau groupe -->
-        <div>
+        <div class="bouton">
+            <button id="But1"><a href="#/home">Retour</a></button>
+
             <button @click="goToAddGroupe">Créer un nouveau groupe</button>
         </div>
-        
-        <button id="But1"><a href="#/home">Retour</a></button>
     </div>
     `,
     data() {

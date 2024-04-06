@@ -10,9 +10,11 @@ const contact = {
         <input class="Champ" id="Adresse" v-model="contact.adresse">
         <input class="Champ" id="Metier" v-model="contact.metier">
 
-        <button id="But1"><a href="#/home">Retour</a></button>
-        <button id="But2" @click="confirmDelete">Supprimer</button>
-        <button id="But3" @click="saveContact">Enregistrer</button>
+        <div id="boutons">
+            <button id="But1"><a href="#/home">Retour</a></button>
+            <button id="But2" @click="confirmDelete">Supprimer</button>
+            <button id="But3" @click="saveContact">Enregistrer</button>
+        </div>
     </div>
     `,
     data() {

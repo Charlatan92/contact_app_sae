@@ -11,9 +11,11 @@ const addGroupe = {
                 <option value="#0000FF">Bleu</option>
                 <!-- Ajoutez plus de couleurs si nécessaire -->
             </select>
-            <button type="submit">Enregistrer</button>
+            <div class="bouton">
+                <button @click="annuler" id="But1">Annuler</button>
+                <button type="submit">Enregistrer</button>
+            </div>
         </form>
-        <button @click="annuler">Annuler</button>
     </div>
     `,
     data() {
