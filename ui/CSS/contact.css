@@ -4,11 +4,11 @@
 }
 
 .contact .Champ {
-    margin-left: 15px;
+    margin-left: 10%;
     margin-top: 15px;
     padding: 2px;
     padding-left: 35px;
-    width: 315px;
+    width: 80%;
     border: #003768 0.01px solid;
     border-radius: 15px;
     background-repeat: no-repeat;
@@ -19,9 +19,15 @@
 }
 
 .contact .photoProfil {
-    margin-top: 20%;
-    margin-left: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7.5%;
     width: 20%;
+}
+
+.contact #nom {
+    margin-top: 2%;
 }
 
 .contact #Nom {
@@ -58,13 +64,20 @@
     background-size: 17px;
 }
 
+.contact #boutons {
+    margin-right: auto;
+    margin-left: 3.5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
 .contact button {
     color: #003768;
     background-color: #C3C3C3;
     border: #003768 1px solid;
+    margin-right: 15px;
     border-radius: 15px;
-    padding: 7.5px 15px 7.5px 15px;
-    margin-top: 65px;
+    padding: 10px 15px 10px 15px;
 }
 
 .contact button a {
@@ -77,21 +90,54 @@
     color: #003768;
 }
 
-.contact #But1 {
-    margin-left: 20px;
-    margin-right: 10px;
+@media screen and (min-width: 450px) {
+
+    .contact .photoProfil {
+        width: 15%;
+    }
+
+    .contact #boutons {
+        margin-left: 10.5%;
+    }
+
+    .contact button {
+        margin-right: 15px;
+        border-radius: 15px;
+        padding: 10px 15px 10px 15px;
+    }
 }
 
-.contact #But2 {
-    margin-right: 10px;
+@media screen and (min-width: 550px) {
+
+    .contact #boutons {
+        margin-left: 17.5%;
+    }
 }
 
-@media screen and (max-width: 900px) {}
+@media screen and (min-width: 768px) {
 
-@media screen and (min-width: 550px) {}
+    .contact #boutons {
+        margin-left: 25%;
+    }
+}
 
-@media screen and (min-width : 768px) {}
+@media screen and (min-width: 992px) {
 
-@media screen and (min-width: 900px) {}
+    .contact #boutons {
+        margin-left: 30%;
+    }
+}
 
-@media screen and (min-width : 1025px) {}
+@media screen and (min-width : 1200px) {
+
+    .contact .photoProfil {
+        width: 12%;
+    }
+
+    .contact #boutons {
+        margin-left: 36.5%;
+    }
+}
+
+@media screen and (min-width : 1400px) {
+}

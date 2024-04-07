@@ -66,3 +66,4 @@ const doublons = {
         }
     }    
 };
+export default doublons;

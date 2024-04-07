@@ -8,6 +8,14 @@
     color: #003768;
 }
 
+.favoris #onlyfav {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #003768;
+}
+
 .favoris .Champ {
     margin-left: 15px;
     padding: 2px;
@@ -22,28 +30,39 @@
     text-align: left;
 }
 
-.favoris li {
-    list-style-type: none;
-    color: #003768;
+.favoris #affFavoris {
+    margin-bottom: 25px;
+    border: #003768 0.01px solid;
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
 }
 
 .favoris #listeFavoris {
     position: relative;
+    list-style-type: none;
+    color: #003768;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: #003768 0.01px solid;
+    border-radius: 15px;
+    height: 30px;
 }
 
 .favoris #listeFavoris p {
-    margin-top: -52px;
-    margin-left: 50px;
+    margin-top: -6%;
+    margin-left: 11%;
 }
 
 .favoris #listeFavoris img {
     position: absolute;
-    left: 7.5%;
-    top: 6px;
+    left: 3%;
+    margin-top: 2px;
+    width: 5%;
 }
 
 .favoris #listeFavoris input {
-    z-index: 900;
+    position: relative;
+    right: -90%;
 }
 
 .favoris button {
@@ -52,7 +71,7 @@
     border: #003768 1px solid;
     border-radius: 15px;
     padding: 7.5px 15px 7.5px 15px;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .favoris #But1 {
@@ -78,52 +97,9 @@
 @media screen and (min-width: 450px) {
 
     .favoris #listeFavoris img {
-        left: 6.5%;
-    }
-    
-    .favoris .coche {
-        margin-left: 15%;
-    }
-    
-    .favoris #But1 {
-        margin-left: 25%;
-    }
-}
-
-@media screen and (min-width: 550px) {
-
-    .favoris #listeFavoris img {
-        left: 5.5%;
-    }
-    
-    .favoris .coche {
-        margin-left: 22.5%;
-    }
-    
-    .favoris #But1 {
-        margin-left: 30%;
-    }
-}
-
-@media screen and (min-width: 650px) {
-
-    .favoris #listeFavoris img {
-        left: 5.5%;
-    }
-    
-    .favoris .coche {
-        margin-top: 1.7%;
-    }
-    
-    .favoris #But1 {
-        margin-left: 27.5%;
-    }
-}
-
-@media screen and (min-width: 850px) {
-
-    .favoris #listeFavoris img {
         left: 4%;
+        top: 7px;
+        width: 3%;
     }
     
     .favoris .coche {
@@ -134,16 +110,95 @@
     .favoris #But1 {
         margin-left: 32.5%;
     }
+
+    .favoris #listeFavoris p {
+        margin-top: -5%;
+        margin-left: 9%;
+    }
+}
+
+@media screen and (min-width: 550px) {
+
+    .favoris #listeFavoris img {
+        left: 4%;
+        width: 3%;
+        top: 6px;
+    }
+    
+    .favoris .coche {
+        margin-left: 29.5%;
+        margin-top: 1.25%;
+    }
+    
+    .favoris #But1 {
+        margin-left: 32.5%;
+    }
+
+    .favoris #listeFavoris p {
+        margin-top: -4%;
+        margin-left: 9%;
+    }
+}
+
+@media screen and (min-width: 650px) {
+
+    .favoris #listeFavoris img {
+        left: 4%;
+        width: 3%;
+    }
+    
+    .favoris .coche {
+        margin-left: 29.5%;
+        margin-top: 1.25%;
+    }
+    
+    .favoris #But1 {
+        margin-left: 32.5%;
+    }
+
+    .favoris #listeFavoris p {
+        margin-top: -4%;
+        margin-left: 9%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .favoris #listeFavoris img {
+        left: 4%;
+        width: 2.5%;
+    }
+    
+    .favoris .coche {
+        margin-left: 29.5%;
+        margin-top: 1.25%;
+    }
+    
+    .favoris #But1 {
+        margin-left: 32.5%;
+    }
+
+    .favoris #listeFavoris p {
+        margin-top: -3%;
+        margin-left: 9%;
+    }
 }
 
 @media screen and (min-width: 990px) {
 
     .favoris #listeFavoris img {
-        left: 4%;
+        left: 2%;
+        width: 2%;
+        top: 4px;
     }
     
     .favoris .coche {
         margin-left: 30%;
+    }
+
+    .favoris #listeFavoris p {
+        margin-top: -2.3%;
+        margin-left: 5%;
     }
 }
 
@@ -151,6 +206,7 @@
 
     .favoris #listeFavoris img {
         left: 2.5%;
+        width: 1.5%;
     }
     
     .favoris .coche {
@@ -161,15 +217,26 @@
     .favoris #But1 {
         margin-left: 40%;
     }
+
+    .favoris #listeFavoris p {
+        margin-top: -1.9%;
+        margin-left: 5%;
+    }
 }
 
 @media screen and (min-width : 1400px) {
 
     .favoris #listeFavoris img {
         left: 2%;
+        width: 1.5%;
     }
     
     .favoris .coche {
-        margin-left: 42%;
+        margin-left: 72%;
+    }
+
+    .favoris #listeFavoris p {
+        margin-top: -1.6%;
+        margin-left: 5%;
     }
 }
