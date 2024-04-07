@@ -3,6 +3,9 @@
 Avant toute chose, je vous demanderais de nous fournir votre adresse IPv4 Publique pour vous ajouter à la whitelist de la Base de données. Sans ça, vous ne pourrez juste pas lancer le serveur Django. Nous ferons notre maximum pour l'ajouter au plus vite. Je vous prie de nous excuser pour ce problème.
 [Connaitre son adresse IPv4 Publique](https://www.whatismyip.com/)
 
+- [Dépot](https://github.com/Charlatan92/contact_app_sae)
+- [Compte Rendu](https://contactapp.notion.site/53b3d86093904c588e7882ac7ccdd4bc?v=8ae2b9c7dd804b82964a4bf129c34003)
+
 ## 1/ Langages utilisés
 - [VueJS](https://vuejs.org/guide/quick-start)
 - [Django](https://docs.djangoproject.com/fr/5.0/howto/windows/)
