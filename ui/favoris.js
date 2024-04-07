@@ -5,17 +5,17 @@ const favoris = {
         <div id="onlyfav">
             <label id="affFavoris" for="toggleFavorites">
                 {{ showOnlyFavorites ? 'Afficher tous les contacts' : 'Afficher seulement les favoris' }}
-                <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites" style="display:none">
+                <input type="checkbox" id="toggleFavorites" v-model="showOnlyFavorites">
             </label>
         </div>
         <div>
-        <li v-for="contact in displayedContacts" :key="contact.id" id="listeFavoris">
-            <input type="checkbox" v-model="selectedContacts" :value="contact.id" :checked="isFavori(contact.id)">
-            <div @click="goToProfile(contact.id)" class="contactInfo">
-                <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
-                <p>{{ contact.nom }} {{ contact.prenom }}</p>
-            </div>
-        </li>
+            <li v-for="contact in displayedContacts" :key="contact.id" id="listeFavoris">
+                <input type="checkbox" v-model="selectedContacts" :value="contact.id">
+                <div @click="goToProfile(contact.id)" class="contactInfo">
+                    <img :src="contact.photo || './Photos/default-image-path.png'" alt="Profile" class="profile-img">
+                    <p>{{ contact.nom }} {{ contact.prenom }}</p>
+                </div>
+            </li>
         </div>
         <button id="But1"><a href="#/home">Retour</a></button>
         <button @click="saveFavorites">Enregistrer</button>
@@ -26,7 +26,7 @@ const favoris = {
             contacts: [],
             contactGroupes: [],
             selectedContacts: [],
-            showOnlyFavorites: false,
+            showOnlyFavorites: true, // Modifier ici pour être par défaut à true
         };
     },
     computed: {
@@ -44,50 +44,41 @@ const favoris = {
             this.$router.push(`/contact/${contactId}`);
         },
         saveFavorites() {
+            const promises = [];
+            
+            // Assurez-vous que les contacts sélectionnés sont sous forme d'entiers et non de chaînes
+            const selectedContacts = this.selectedContacts.map(Number);
+        
+            // Pour chaque contact sélectionné, ajouter ou supprimer des favoris
             this.contacts.forEach(contact => {
+                const isSelected = selectedContacts.includes(contact.id);
                 const isFavori = this.isFavori(contact.id);
-                const isSelected = this.selectedContacts.includes(contact.id);
         
                 if (isSelected && !isFavori) {
-                    // Ajouter aux favoris
+                    // Si le contact est sélectionné mais pas encore favori, l'ajouter
                     const newFavorite = {
                         contact_id: contact.id,
                         groupe_id: 1,
                     };
-                    axios.post('http://127.0.0.1:8000/contactgroupe/', JSON.stringify(newFavorite), {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    })
-                    .then(response => {
-                        console.log('Contact ajouté aux favoris:', response.data);
-                        // Recharger les données pour refléter les changements
-                        this.loadContactsAndGroupes();
-                    })
-                    .catch(error => {
-                        console.error('Erreur lors de l\'ajout aux favoris:', error);
-                    });
+                    promises.push(axios.post('http://127.0.0.1:8000/contactgroupe/', newFavorite));
                 } else if (!isSelected && isFavori) {
-                    // Retirer des favoris
+                    // Si le contact est actuellement un favori mais n'est pas sélectionné, le supprimer
                     const contactGroupeEntry = this.contactGroupes.find(cg => cg.contact_id === contact.id && cg.groupe_id === 1);
                     if (contactGroupeEntry) {
-                        axios.delete(`http://127.0.0.1:8000/contactgroupe/${contactGroupeEntry.id}/`, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                            }
-                        })
-                        .then(response => {
-                            console.log('Contact retiré des favoris:', response.data);
-                            // Recharger les données pour refléter les changements
-                            this.loadContactsAndGroupes();
-                        })
-                        .catch(error => {
-                            console.error('Erreur lors de la suppression des favoris:', error);
-                        });
+                        promises.push(axios.delete(`http://127.0.0.1:8000/contactgroupe/${contactGroupeEntry.id}/`));
                     }
                 }
             });
+        
+            Promise.all(promises).then(() => {
+                alert('Favoris mis à jour avec succès');
+                this.loadContactsAndGroupes();
+            }).catch(error => {
+                console.error('Erreur lors de la mise à jour des favoris:', error);
+                alert('Une erreur est survenue lors de la mise à jour des favoris.');
+            });
         },
+           
         loadContactsAndGroupes() {
             Promise.all([
                 axios.get('http://127.0.0.1:8000/contact/'),

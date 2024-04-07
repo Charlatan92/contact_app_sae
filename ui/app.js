@@ -6,7 +6,6 @@ import addGroupe from './addGroupe.js';
 import favoris from './favoris.js';
 import groupesPage from './groupesPage.js';
 import groupe from './groupe.js';
-import doublons from './doublons.js';
 import test from './test.js';
 
 const routes = [
@@ -17,7 +16,6 @@ const routes = [
     { path: '/favoris', component: favoris },
     { path: '/groupe/:id', component: groupe },
     { path: '/groupesPage', component: groupesPage },
-    { path: '/doublons', component: doublons },
     { path: '/test', component: test },
 ]
 

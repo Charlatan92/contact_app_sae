@@ -9,11 +9,11 @@ urlpatterns = [
     re_path(r'^contact/(?P<id>[0-9]+)$', views.contactApi),  # Pour obtenir un contact spécifique par ID
 
     re_path(r'^groupe/$', views.groupeApi),  # Pour obtenir tous les groupes
-    re_path(r'^groupe/(?P<id>[0-9]+)$', views.groupeApi),  # Pour obtenir un groupe spécifique par ID
+    re_path(r'^groupe/(?P<id>[0-9]+)/$', views.groupeApi),  # Pour obtenir un groupe spécifique par ID
     
     # URLs pour ContactGroupe
     re_path(r'^contactgroupe/$', views.contactGroupeApi),  # Pour obtenir tous les contacts
-    re_path(r'^contactgroupe/(?P<id>[0-9]+)$', views.contactGroupeApi),  # Pour obtenir un contact spécifique par ID
+    re_path(r'^contactgroupe/(?P<id>[0-9]+)/$', views.contactGroupeApi),  # Pour obtenir un contact spécifique par ID
 
     # Sauvegarder un fichier
     re_path(r'^contact/savefile$', views.SaveFile),

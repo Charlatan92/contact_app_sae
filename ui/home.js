@@ -22,10 +22,6 @@ const home = {
                 <input type="button" value="Groupes" class="Champ" id="GroupesPage">
             </a>
             <hr>
-            <a href="#/doublons">
-                <input type="button" value="Doublons" class="Champ" id="Doublons">
-            </a>
-            <hr>
         </header>
 
         <li v-for="contact in filteredContacts" :key="contact.id" id="listeContact" @click="goToProfile(contact.id)">
